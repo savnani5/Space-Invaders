@@ -1,2 +1,2 @@
 # Space-Invaders
-Space Invaders Game
+A classic Space Invaders Game Environment created using PYGAME library. 
