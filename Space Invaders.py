@@ -75,8 +75,8 @@ for i in range(no_of_enemies):
     en_image.append(image)
     ex.append(random.randint(0, 735))
     ey.append(random.randint(20, 100)) 
-    en_x_change.append(5) 
-    en_y_change.append(40) 
+    en_x_change.append(1) 
+    en_y_change.append(10) 
 
 # Bullet Variables
 bl_image = pygame.image.load('bullet.png')
@@ -84,7 +84,7 @@ bl_image = pygame.transform.scale(bl_image, (32, 32))
 bx = 0
 by = 480
 bx_x_change = 0
-by_y_change = 40
+by_y_change = 20
 bullet_state = 'ready'
 
 # Score variable
@@ -109,10 +109,10 @@ while True:
             
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                pl_x_change = -30
+                pl_x_change = -10
                 # print('left arrow pressed')
             if event.key == pygame.K_RIGHT:
-                pl_x_change = 30
+                pl_x_change = 10
                 # print('right arrow pressed')    
             if event.key == pygame.K_SPACE:
                 if bullet_state == 'ready':
@@ -141,10 +141,10 @@ while True:
 
         ex[i] += en_x_change[i]
         if ex[i] <= 0:
-            en_x_change[i] = 15
+            en_x_change[i] = 3
             ey[i] += en_y_change[i]
         elif ex[i] >= 736:
-            en_x_change[i] = -15  
+            en_x_change[i] = -3  
             ey[i] += en_y_change[i]
             
          #Collision Check
